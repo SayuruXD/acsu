@@ -718,36 +718,6 @@
     html[data-theme="light"] .tile.b .big { color: var(--accent-text); }
     html[data-theme="light"] input::placeholder, html[data-theme="light"] textarea::placeholder { color: rgba(43,13,18,.45); }
 </style>
-
-<style>
-  .acsu-trap{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
-  .admin-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
-  .admin-stat{padding:18px 20px;display:flex;flex-direction:column;gap:7px}
-  .admin-stat small{color:var(--ink-faint);font-size:.82rem}
-  .admin-stat strong{font-size:1.8rem;color:var(--accent-text)}
-  .admin-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 14px}
-  .admin-tabs button,.auth-link{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 16px;cursor:pointer}
-  .admin-tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .admin-panel{padding:22px;margin:0 0 22px}
-  .admin-panel-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}
-  .admin-panel-head h2{margin:0 0 5px;font-size:1.25rem}
-  .admin-panel-head p{margin:0;color:var(--ink-faint);font-size:.9rem}
-  .admin-table-wrap{width:100%;overflow-x:auto}
-  .admin-table{width:100%;border-collapse:collapse;min-width:760px;font-size:.9rem}
-  .admin-table th,.admin-table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  .admin-table th{color:var(--ink-faint);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em}
-  .admin-table td{color:var(--ink)}
-  .admin-table details{min-width:150px}
-  .admin-table summary{cursor:pointer;color:var(--accent-text);font-weight:650}
-  .admin-detail{white-space:pre-wrap;overflow-wrap:anywhere;max-width:320px;margin-top:8px;font-size:.82rem;color:var(--ink-faint)}
-  .admin-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .admin-actions button{border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);padding:6px 9px;cursor:pointer;font-size:.8rem}
-  .admin-actions button:hover{border-color:var(--accent)}
-  .admin-status{display:inline-flex;padding:4px 8px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:.76rem;text-transform:capitalize}
-  .auth-link{border:0;padding:8px 0;color:var(--accent-text);text-decoration:underline;font-size:.88rem}
-  @media(max-width:700px){.admin-stats{grid-template-columns:1fr}.admin-panel{padding:15px}.admin-panel-head{align-items:flex-start;flex-direction:column}}
-</style>
-
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="goo2" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"/></filter><filter id="goo" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8"/></filter></defs></svg>
@@ -796,7 +766,6 @@
         <a href="#gallery">Gallery</a>
         <a href="#team">Team</a>
         <a href="#membership" class="mlink">Membership</a>
-        <a href="#admin" id="adminNav" hidden>Admin</a>
         <a href="#contact" class="cta">Contact</a>
       </nav>
       <a href="#login" class="loginbtn" id="loginbtn">Log in</a>
@@ -1028,21 +997,19 @@
             <h3>Reach the unit</h3>
             <p>Replace these with the unit's official details.</p>
             <div class="row"><div class="ico">📍</div><div><small>Address</small>Ananda College, Colombo 10</div></div>
-            <div class="row"><div class="ico">✉️</div><div><small>Email</small>your-unit-email@example.com</div></div>
-            <div class="row"><div class="ico">📞</div><div><small>Phone</small>+94 00 000 0000</div></div>
+            <div class="row"><div class="ico">✉️</div><div><small>Email</small>your-unit-email@example.com</div></div>            <div class="row"><div class="ico">📞</div><div><small>Phone</small>+94 00 000 0000</div></div>
           </div>
 
           <form class="glass rv" id="form" novalidate>
-            <div class="acsu-trap" aria-hidden="true"><label for="website_url">Leave this field empty</label><input id="website_url" name="website_url" type="text" tabindex="-1" autocomplete="off"></div>
             <div class="two">
-              <div class="field"><label for="name">Full name</label><input id="name" name="name" placeholder="Your name" maxlength="100" required></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" maxlength="254" placeholder="you@example.com" required></div>
+              <div class="field"><label for="name">Full name</label><input id="name" name="name" placeholder="Your name" required></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
             </div>
             <div class="field">
               <label for="topic">I'm writing about</label>
               <select id="topic" name="topic"><option>Joining the unit</option><option>Partnership / sponsorship</option><option>General question</option></select>
             </div>
-            <div class="field"><label for="msg">Message</label><textarea id="msg" name="msg" maxlength="4000" placeholder="How can we help?" required></textarea></div>
+            <div class="field"><label for="msg">Message</label><textarea id="msg" name="msg" placeholder="How can we help?" required></textarea></div>
             <button class="btn gold" type="submit">Send message</button>
             <p id="status" role="status"></p>
           </form>
@@ -1071,7 +1038,7 @@
       <div class="wrap">
         <form class="glass mem" id="memform" novalidate>
           <h3>Membership form</h3>
-          <p>Fill in your details and submit. Your application is securely saved and a PDF copy is downloaded for your records.</p>
+          <p>Fill in your details and submit. A PDF copy is saved for you and sent to the unit.</p>
           <h4>Student details</h4>
           <div class="two">
             <div class="field"><label for="m_name">Full name</label><input id="m_name" name="Full name" placeholder="Your name" autocomplete="name" required></div>
@@ -1083,6 +1050,7 @@
             <div class="field"><label for="m_phone">Phone</label><input id="m_phone" name="Phone" type="tel" placeholder="07X XXX XXXX" autocomplete="tel" required></div>
           </div>
           <div class="field"><label for="m_email">Email</label><input id="m_email" name="Email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div class="field"><label for="m_addr">Home address</label><input id="m_addr" name="Home address" placeholder="Address" autocomplete="street-address" required></div>
           <h4>Parent / guardian</h4>
           <div class="two">
             <div class="field"><label for="m_pname">Parent / guardian name</label><input id="m_pname" name="Parent / guardian name" placeholder="Name" required></div>
@@ -1092,42 +1060,13 @@
           <div class="two">
             <div class="field"><label for="m_area">Area of interest</label>
               <select id="m_area" name="Area of interest"><option>Health camps</option><option>Arogya (main event)</option><option>Awareness programmes</option><option>Organising / logistics</option><option>Media and design</option></select></div>
+            <div class="field"><label for="m_med">Medical conditions or allergies (optional)</label><input id="m_med" name="Medical notes" placeholder="None"></div>
           </div>
           <div class="field"><label for="m_why">Why do you want to join? (optional)</label><textarea id="m_why" name="Reason for joining" style="min-height:90px" placeholder="Tell us a little about yourself"></textarea></div>
           <label class="chk"><input type="checkbox" id="m_ok" required><span>I confirm the details above are correct and my parent / guardian agrees to my joining the Saukyadana Unit.</span></label>
           <div class="mem-actions"><button class="btn gold" type="submit" id="mbtn">Submit membership form</button></div>
           <p id="mstatus" role="status"></p>
         </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- ================= ADMIN DASHBOARD ================= -->
-  <main class="page" id="pg-admin" hidden>
-    <section class="pghead">
-      <div class="wrap">
-        <a href="#top" class="back">← Back to home</a>
-        <span class="kicker"><b>★</b> Administration</span>
-        <h1 class="pgtitle">Unit dashboard</h1>
-        <p class="pgsub">Private workspace for reviewing membership applications and contact enquiries.</p>
-        <p id="adminStatus" role="status" aria-live="polite"></p>
-        <div class="admin-stats" id="adminStats">
-          <article class="glass admin-stat"><small>Latest applications shown</small><strong id="statApps">—</strong></article>
-          <article class="glass admin-stat"><small>Pending review</small><strong id="statPending">—</strong></article>
-          <article class="glass admin-stat"><small>Contact messages</small><strong id="statMessages">—</strong></article>
-        </div>
-        <div class="admin-tabs" role="tablist" aria-label="Admin sections">
-          <button type="button" class="on" data-admin-tab="applications" role="tab" aria-selected="true">Membership applications</button>
-          <button type="button" data-admin-tab="messages" role="tab" aria-selected="false">Contact messages</button>
-        </div>
-        <section class="glass admin-panel" id="adminApplications" aria-label="Membership applications">
-          <div class="admin-panel-head"><div><h2>Applications</h2><p>Review each submission and update its status.</p></div><button type="button" class="btn ghost" id="adminRefresh">Refresh</button></div>
-          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Applicant</th><th>Class</th><th>Area</th><th>Submitted</th><th>Status</th><th>Details / action</th></tr></thead><tbody id="applicationsBody"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
-        </section>
-        <section class="glass admin-panel" id="adminMessages" hidden aria-label="Contact messages">
-          <div class="admin-panel-head"><div><h2>Contact messages</h2><p>Enquiries sent through the public contact form.</p></div><button type="button" class="btn ghost" id="messagesRefresh">Refresh</button></div>
-          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>From</th><th>Topic</th><th>Message</th><th>Received</th><th>Status</th><th>Action</th></tr></thead><tbody id="messagesBody"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
-        </section>
       </div>
     </section>
   </main>
@@ -1163,25 +1102,15 @@
             <form id="authform" novalidate>
               <div class="field" id="f-name" hidden><label for="a_name">Full name</label><input id="a_name" placeholder="Your name" autocomplete="name"></div>
               <div class="field"><label for="a_email">Email</label><input id="a_email" type="email" placeholder="you@example.com" autocomplete="email"></div>
-              <div class="field"><label for="a_pass">Password</label><input id="a_pass" type="password" placeholder="At least 8 characters" autocomplete="current-password"></div>
+              <div class="field"><label for="a_pass">Password</label><input id="a_pass" type="password" placeholder="At least 6 characters" autocomplete="current-password"></div>
               <button class="btn gold" type="submit" id="abtn" style="width:100%;justify-content:center">Log in</button>
               <p id="astatus" role="status"></p>
-              <button type="button" class="auth-link" id="forgotPassword">Forgot password?</button>
             </form>
           </div>
           <div id="auth-in" hidden>
             <h1 class="authtitle">Welcome, <span id="who"></span></h1>
             <p class="authsub">You are logged in. Your name and email will be filled into the membership form.</p>
-            <div class="mem-actions" style="justify-content:center"><a href="#membership" class="btn gold">Go to membership form →</a><a href="#admin" class="btn ghost" id="adminShortcut" hidden>Admin dashboard</a><button type="button" class="btn ghost" id="logout">Log out</button></div>
-          </div>
-          <div id="auth-reset" hidden>
-            <h1 class="authtitle">Choose a new password</h1>
-            <p class="authsub">Enter a new password for your ACSU account.</p>
-            <form id="resetform" novalidate>
-              <div class="field"><label for="new_password">New password</label><input id="new_password" type="password" minlength="8" autocomplete="new-password" required></div>
-              <button class="btn gold" type="submit" id="resetbtn" style="width:100%;justify-content:center">Update password</button>
-              <p id="resetstatus" role="status"></p>
-            </form>
+            <div class="mem-actions" style="justify-content:center"><a href="#membership" class="btn gold">Go to membership form →</a><button type="button" class="btn ghost" id="logout">Log out</button></div>
           </div>
         </div>
       </div>
@@ -1230,7 +1159,10 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
+  <script>
+    const ACSU_SUPABASE_URL = 'https://bwlrycirjpiekpbytdfd.supabase.co';
+    const ACSU_SUPABASE_KEY = 'sb_publishable_C3lwkDAiqlAkbESisL3gBw_EXFtr5Ul';
+    const acsuSupabase = window.supabase.createClient(ACSU_SUPABASE_URL, ACSU_SUPABASE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
 
     // Reuse gallery photos in the hero (keeps file size down)
     document.querySelectorAll('img[data-from]').forEach(img => {
@@ -1406,39 +1338,22 @@
     }), { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
 
-    // Contact messages are stored in Supabase. The public policy allows inserts only.
+    // Contact form -> Supabase (public insert policy; messages visible only to admins)
     const form = document.getElementById('form'), status = document.getElementById('status');
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      if (document.getElementById('website_url').value) { form.reset(); return; }
-      if (!form.checkValidity()) {
-        status.style.color = '#ffb4b4';
-        status.textContent = t('Please complete all fields with a valid email.');
-        form.reportValidity();
-        return;
-      }
-      const submit = form.querySelector('button[type="submit"]');
-      submit.disabled = true;
-      status.style.color = '';
-      status.textContent = 'Sending…';
-      try {
-        const { data: { user } } = await acsuSupabase.auth.getUser();
-        const { error } = await acsuSupabase.from('contact_messages').insert({
-          user_id: user?.id || null,
-          full_name: document.getElementById('name').value.trim(),
-          email: document.getElementById('email').value.trim(),
-          topic: document.getElementById('topic').value,
-          message: document.getElementById('msg').value.trim()
-        });
-        if (error) throw error;
-        status.style.color = '#7ee8b4';
-        status.textContent = t('Thank you! Your message has been received.');
-        form.reset();
-      } catch (err) {
-        console.error('ACSU contact submission failed:', err);
-        status.style.color = '#ffb4b4';
-        status.textContent = 'We could not send your message. Please try again.';
-      } finally { submit.disabled = false; }
+      if (!form.reportValidity()) return;
+      const { data: { user } } = await acsuSupabase.auth.getUser();
+      const { error } = await acsuSupabase.from('contact_messages').insert({
+        user_id: user?.id || null,
+        full_name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        topic: document.getElementById('topic').value,
+        message: document.getElementById('msg').value.trim()
+      });
+      status.style.color = error ? '#ffb4b4' : '#7ee8b4';
+      status.textContent = error ? t('Your message could not be sent. Please try again.') : t('Thank you! Your message has been received.');
+      if (!error) form.reset();
     });
 
     // ============ Language switch (English / සිංහල) ============
@@ -1484,7 +1399,7 @@
       "Ananda College Saukyadana Unit": "ආනන්ද විද්‍යාලය සෞඛ්‍යදාන ඒකකය", "Live for Lives": "ජීවිත වෙනුවෙන් ජීවත් වෙමු",
       "© 2026 Ananda College Saukyadana Unit. All rights reserved.": "© 2026 ආනන්ද විද්‍යාලය සෞඛ්‍යදාන ඒකකය. සියලුම හිමිකම් ඇවිරිණි.",
       "Thank you! Your message has been received.": "ස්තූතියි! ඔබගේ පණිවිඩය ලැබුණා.",
-      "Please complete all fields with a valid email.": "කරුණාකර සියලුම ක්ෂේත්‍ර නිවැරදි ඊමේල් ලිපිනයක් සමඟ සම්පූර්ණ කරන්න."
+      "Please complete all fields with a valid email.": "කරුණාකර සියලුම ක්ෂේත්‍ර නිවැරදි ඊමේල් ලිපිනයක් සමඟ සම්පූර්ණ කරන්න.", "Please log in before submitting a membership application.": "සාමාජිකත්ව අයදුම්පත ඉදිරිපත් කිරීමට පෙර පිවිසෙන්න.", "Submitting…": "ඉදිරිපත් කරමින්…", "Your application was submitted successfully. Your PDF copy has been downloaded. Reference: ": "ඔබගේ අයදුම්පත සාර්ථකව ඉදිරිපත් කරන ලදී. PDF පිටපත බාගත කර ඇත. යොමු අංකය: "
     };
     const SI_HTML = {
       h1: '<em>සෞඛ්‍යයෙන්</em> සේවය කරමු, හදවතින් පරිත්‍යාග කරමු.',
@@ -1575,220 +1490,103 @@
     })();
 
     // ============ Pages (hash routing) ============
-    const homeEl = document.getElementById('top'), pgM = document.getElementById('pg-membership'), pgL = document.getElementById('pg-login'), pgP = document.getElementById('pg-memories'), pgA = document.getElementById('pg-admin');
+    const homeEl = document.getElementById('top'), pgM = document.getElementById('pg-membership'), pgL = document.getElementById('pg-login'), pgP = document.getElementById('pg-memories');
     function route() {
       const h = location.hash.replace('#', '');
-      const view = h === 'membership' ? pgM : h === 'login' ? pgL : h === 'memories' ? pgP : h === 'admin' ? pgA : null;
-      homeEl.hidden = !!view; pgM.hidden = view !== pgM; pgL.hidden = view !== pgL; pgP.hidden = view !== pgP; pgA.hidden = view !== pgA;
+      const view = h === 'membership' ? pgM : h === 'login' ? pgL : h === 'memories' ? pgP : null;
+      homeEl.hidden = !!view; pgM.hidden = view !== pgM; pgL.hidden = view !== pgL; pgP.hidden = view !== pgP;
       document.documentElement.classList.add('route'); 
       document.querySelectorAll('.menu a').forEach(a => a.classList.toggle('active', (view === pgM && a.getAttribute('href') === '#membership') || (view === pgP && a.getAttribute('href') === '#memories')));
       document.getElementById('loginbtn').classList.toggle('on', view === pgL);
       document.querySelectorAll('.ch-pages a').forEach(a => a.classList.toggle('cur', a.dataset.pg === h));
-      if (view) { view.querySelectorAll('.rv').forEach(e => e.classList.add('in')); document.documentElement.style.scrollBehavior = 'auto'; scrollTo(0, 0); document.documentElement.style.scrollBehavior = ''; refreshAcct(); if (view === pgA) loadAdminDashboard(); }
+      if (view) { view.querySelectorAll('.rv').forEach(e => e.classList.add('in')); document.documentElement.style.scrollBehavior = 'auto'; scrollTo(0, 0); document.documentElement.style.scrollBehavior = ''; refreshAcct(); }
       else if (h && document.getElementById(h)) requestAnimationFrame(() => document.getElementById(h).scrollIntoView());
     }
     addEventListener('hashchange', route);
 
-    // ============ Supabase authentication ==========
-    const ACSU_SUPABASE_URL = 'https://bwlrycirjpiekpbytdfd.supabase.co';
-    const ACSU_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_C3lwkDAiqlAkbESisL3gBw_EXFtr5Ul';
-    const acsuSupabase = window.supabase.createClient(ACSU_SUPABASE_URL, ACSU_SUPABASE_PUBLISHABLE_KEY);
-    let acsuUser = null, acsuIsAdmin = false, acsuRecoveryMode = false, acsuAuthReady = false, adminLoadToken = 0;
-    const adminNav = document.getElementById('adminNav');
-    async function refreshAdminAccess() {
-      if (!acsuUser) {
-        acsuIsAdmin = false;
-      } else {
-        const { data, error } = await acsuSupabase.from('user_roles').select('role').eq('user_id', acsuUser.id).maybeSingle();
-        acsuIsAdmin = !error && data?.role === 'admin';
-        if (error && error.code !== 'PGRST116') console.warn('ACSU role check:', error.message);
-      }
-      acsuAuthReady = true;
-      adminNav.hidden = !acsuIsAdmin;
-      document.getElementById('adminShortcut').hidden = !acsuIsAdmin;
-      if (location.hash === '#admin' && !acsuIsAdmin) location.hash = '#login';
-      if (acsuIsAdmin && location.hash === '#admin') loadAdminDashboard();
+    // ============ Supabase member authentication ============
+    let acsuCurrentUser = null;
+    let acsuIsAdmin = false;
+    function authMessage(message, bad = false) {
+      const el = document.getElementById('astatus');
+      if (el) { el.textContent = t(message); el.style.color = bad ? '#ff9b9b' : '#7ee8b4'; }
     }
-    function refreshAcct() {
-      const lb = document.getElementById('loginbtn');
-      const name = acsuUser?.user_metadata?.full_name || acsuUser?.email?.split('@')[0] || '';
-      lb.textContent = acsuUser ? name.split(' ')[0] : t('Log in');
-      document.getElementById('auth-out').hidden = !!acsuUser || acsuRecoveryMode;
-      document.getElementById('auth-in').hidden = !acsuUser || acsuRecoveryMode;
-      document.getElementById('auth-reset').hidden = !acsuRecoveryMode;
-      if (acsuUser) {
+    async function refreshAcct() {
+      const { data: { user } } = await acsuSupabase.auth.getUser();
+      acsuCurrentUser = user || null;
+      acsuIsAdmin = false;
+      if (user) {
+        const { data: profile } = await acsuSupabase.from('profiles').select('full_name').eq('id', user.id).maybeSingle();
+        const { data: role } = await acsuSupabase.from('user_roles').select('role').eq('user_id', user.id).maybeSingle();
+        acsuIsAdmin = role?.role === 'admin';
+        const name = profile?.full_name || user.user_metadata?.full_name || user.email || 'Member';
+        document.getElementById('loginbtn').textContent = name.split(' ')[0];
+        document.getElementById('auth-out').hidden = true;
+        document.getElementById('auth-in').hidden = false;
         document.getElementById('who').textContent = name.split(' ')[0];
         const n = document.getElementById('m_name'), e = document.getElementById('m_email');
         if (n && !n.value) n.value = name;
-        if (e && !e.value) e.value = acsuUser.email || '';
-        document.getElementById('acctnote').textContent = t('Logged in as ') + acsuUser.email;
+        if (e && !e.value) e.value = user.email || '';
+        document.getElementById('acctnote').textContent = t('Logged in as ') + user.email;
+        if (acsuIsAdmin) renderAdminPanel();
       } else {
-        document.getElementById('acctnote').innerHTML = t('Have an account?') + ' <a href="#login">' + t('Log in') + '</a> ' + t('to fill in your name and email automatically.' );
+        document.getElementById('loginbtn').textContent = t('Log in');
+        document.getElementById('auth-out').hidden = false;
+        document.getElementById('auth-in').hidden = true;
+        document.getElementById('acctnote').innerHTML = t('Have an account?') + ' <a href="#login">' + t('Log in') + '</a> ' + t('to fill in your name and email automatically.');
+        document.getElementById('admin-panel')?.remove();
       }
-      adminNav.hidden = !acsuIsAdmin;
-      document.getElementById('adminShortcut').hidden = !acsuIsAdmin;
     }
+    async function renderAdminPanel() {
+      if (!acsuIsAdmin || document.getElementById('admin-panel')) return;
+      const host = document.getElementById('auth-in');
+      const panel = document.createElement('div'); panel.id = 'admin-panel'; panel.className = 'glass'; panel.style.cssText = 'margin-top:24px;padding:22px;text-align:left';
+      panel.innerHTML = '<h3>ACSU Admin</h3><p>Membership applications and contact inbox</p><div id="admin-applications">Loading applications…</div><hr style="margin:20px 0;opacity:.2"><div id="admin-contacts">Loading messages…</div>';
+      host.appendChild(panel);
+      const { data: apps, error: appErr } = await acsuSupabase.from('membership_applications').select('*').order('submitted_at', {ascending:false}).limit(100);
+      const appBox = panel.querySelector('#admin-applications');
+      if (appErr) appBox.textContent = 'Could not load applications: ' + appErr.message;
+      else if (!apps?.length) appBox.textContent = 'No membership applications yet.';
+      else appBox.innerHTML = '<h4>Membership applications</h4>' + apps.map(a => `<article style="padding:12px 0;border-bottom:1px solid #8885"><b>${escapeACSU(a.student_full_name)}</b> · ${escapeACSU(a.reference)} · ${escapeACSU(a.status)}<p>${escapeACSU(a.student_email)} · Grade ${escapeACSU(a.grade_class)} · ${escapeACSU(a.admission_number)}</p><p>${escapeACSU(a.guardian_name)} · ${escapeACSU(a.guardian_phone)}</p><p>${escapeACSU(a.reason_for_joining || '')}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn gold" data-review="approved" data-id="${a.id}">Approve</button><button class="btn ghost" data-review="rejected" data-id="${a.id}">Reject</button></div></article>`).join('');
+      const { data: msgs, error: msgErr } = await acsuSupabase.from('contact_messages').select('*').order('created_at',{ascending:false}).limit(100);
+      const msgBox = panel.querySelector('#admin-contacts');
+      if (msgErr) msgBox.textContent = 'Could not load messages: ' + msgErr.message;
+      else if (!msgs?.length) msgBox.textContent = 'No contact messages yet.';
+      else msgBox.innerHTML = '<h4>Contact messages</h4>' + msgs.map(m => `<article style="padding:12px 0;border-bottom:1px solid #8885"><b>${escapeACSU(m.full_name)}</b> · ${escapeACSU(m.email)}<p>${escapeACSU(m.topic)}</p><p>${escapeACSU(m.message)}</p></article>`).join('');
+      appBox.querySelectorAll('[data-review]').forEach(btn => btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        const { error } = await acsuSupabase.from('membership_applications').update({status:btn.dataset.review, reviewed_by:acsuCurrentUser.id, reviewed_at:new Date().toISOString()}).eq('id',btn.dataset.id);
+        if (error) alert('Could not update application: ' + error.message); else { document.getElementById('admin-panel').remove(); renderAdminPanel(); }
+      }));
+    }
+    function escapeACSU(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
     (function () {
-      let mode = 'in';
-      const f = document.getElementById('authform'), st = document.getElementById('astatus'), submit = document.getElementById('abtn');
-      const setMode = m => {
-        mode = m;
-        document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === m));
-        document.getElementById('f-name').hidden = m !== 'up';
-        document.getElementById('a_name').required = m === 'up';
-        submit.textContent = t(m === 'up' ? 'Create account' : 'Log in');
-        document.getElementById('a_pass').autocomplete = m === 'up' ? 'new-password' : 'current-password';
-        document.getElementById('forgotPassword').hidden = m === 'up';
-        st.textContent = '';
-      };
+      let mode = 'in'; const f = document.getElementById('authform');
+      const setMode = m => { mode = m; document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === m));
+        document.getElementById('f-name').hidden = m !== 'up'; document.getElementById('abtn').textContent = t(m === 'up' ? 'Create account' : 'Log in');
+        document.getElementById('a_pass').autocomplete = m === 'up' ? 'new-password' : 'current-password'; authMessage(''); };
       document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.tab)));
-      const bad = m => { st.textContent = m; st.style.color = '#ff9b9b'; };
       f.addEventListener('submit', async e => {
         e.preventDefault();
-        const email = document.getElementById('a_email').value.trim().toLowerCase();
-        const password = document.getElementById('a_pass').value;
-        const name = document.getElementById('a_name').value.trim();
-        if (!/^\S+@\S+\.\S+$/.test(email)) return bad('Please enter a valid email address.');
-        if (password.length < 8) return bad('Password must be at least 8 characters.');
-        if (mode === 'up' && !name) return bad('Please enter your name.');
-        submit.disabled = true; st.style.color = ''; st.textContent = mode === 'up' ? 'Creating your account…' : 'Signing in…';
-        try {
-          if (mode === 'up') {
-            const { data, error } = await acsuSupabase.auth.signUp({
-              email, password,
-              options: { data: { full_name: name }, emailRedirectTo: location.origin + location.pathname + '#login' }
-            });
-            if (error) throw error;
-            if (data.session) {
-              acsuUser = data.user; st.textContent = 'Account created successfully.'; st.style.color = '#7fe3a0';
-              f.reset(); refreshAcct(); await refreshAdminAccess();
-            } else {
-              st.textContent = 'Account created. Check your email to confirm it, then log in.';
-              st.style.color = '#7fe3a0'; f.reset(); setMode('in');
-            }
-          } else {
-            const { data, error } = await acsuSupabase.auth.signInWithPassword({ email, password });
-            if (error) throw error;
-            acsuUser = data.user; f.reset(); st.textContent = ''; refreshAcct(); await refreshAdminAccess();
-          }
-        } catch (err) { bad(err.message || 'Authentication failed. Please try again.'); }
-        finally { submit.disabled = false; }
+        const email = document.getElementById('a_email').value.trim().toLowerCase(), password = document.getElementById('a_pass').value, name = document.getElementById('a_name').value.trim();
+        if (!/^\S+@\S+\.\S+$/.test(email)) return authMessage('Please enter a valid email address.', true);
+        if (password.length < 8) return authMessage('Password must be at least 8 characters.', true);
+        if (mode === 'up') {
+          if (!name) return authMessage('Please enter your name.', true);
+          const { data, error } = await acsuSupabase.auth.signUp({email, password, options:{data:{full_name:name}}});
+          if (error) return authMessage(error.message, true);
+          if (!data.session) { authMessage('Account created. Check your email to confirm your account, then log in.'); f.reset(); return; }
+          authMessage('Account created successfully.');
+        } else {
+          const { error } = await acsuSupabase.auth.signInWithPassword({email, password});
+          if (error) return authMessage(error.message, true);
+          authMessage('You are now logged in.');
+        }
+        f.reset(); await refreshAcct();
       });
-      document.getElementById('forgotPassword').addEventListener('click', async () => {
-        const email = document.getElementById('a_email').value.trim().toLowerCase();
-        if (!/^\S+@\S+\.\S+$/.test(email)) return bad('Enter your account email above first.');
-        submit.disabled = true; st.style.color = ''; st.textContent = 'Sending password reset email…';
-        try {
-          const { error } = await acsuSupabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname + '#login' });
-          if (error) throw error;
-          st.style.color = '#7fe3a0'; st.textContent = 'If an account exists for that email, a password reset link has been sent.';
-        } catch (err) { bad(err.message || 'Could not send the reset email.'); }
-        finally { submit.disabled = false; }
-      });
-      document.getElementById('resetform').addEventListener('submit', async e => {
-        e.preventDefault();
-        const password = document.getElementById('new_password').value;
-        const resetStatus = document.getElementById('resetstatus'), resetBtn = document.getElementById('resetbtn');
-        if (password.length < 8) { resetStatus.textContent = 'Password must be at least 8 characters.'; return; }
-        resetBtn.disabled = true; resetStatus.textContent = 'Updating password…';
-        const { error } = await acsuSupabase.auth.updateUser({ password });
-        resetBtn.disabled = false;
-        if (error) { resetStatus.textContent = error.message; resetStatus.style.color = '#ff9b9b'; return; }
-        resetStatus.textContent = 'Password updated. You can now continue using your account.';
-        resetStatus.style.color = '#7fe3a0'; document.getElementById('resetform').reset();
-        acsuRecoveryMode = false; document.getElementById('auth-reset').hidden = true; document.getElementById('auth-in').hidden = !acsuUser;
-      });
-      document.getElementById('logout').addEventListener('click', async () => {
-        const { error } = await acsuSupabase.auth.signOut();
-        if (error) { bad(error.message); return; }
-        acsuUser = null; acsuIsAdmin = false; refreshAcct(); setMode('in'); await refreshAdminAccess();
-      });
-      acsuSupabase.auth.getUser().then(async ({ data, error }) => {
-        if (error) console.error('ACSU session check:', error);
-        acsuUser = data?.user || null; refreshAcct(); await refreshAdminAccess();
-      });
-      acsuSupabase.auth.onAuthStateChange((event, session) => {
-        acsuUser = session?.user || null;
-        if (event === 'PASSWORD_RECOVERY') { acsuRecoveryMode = true; if (location.hash !== '#login') location.hash = '#login'; }
-        else if (event === 'SIGNED_OUT') acsuRecoveryMode = false;
-        refreshAcct();
-        if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') setTimeout(() => refreshAdminAccess(), 0);
-      });
+      document.getElementById('logout').addEventListener('click', async () => { await acsuSupabase.auth.signOut(); await refreshAcct(); setMode('in'); });
+      acsuSupabase.auth.onAuthStateChange(() => setTimeout(refreshAcct, 0));
     })();
-
-    // ============ Admin dashboard (RLS is the actual security boundary) ==========
-    function adminText(tag, value, className) {
-      const el = document.createElement(tag); if (className) el.className = className; el.textContent = value == null ? '' : String(value); return el;
-    }
-    function adminStatus(message, error=false) {
-      const el = document.getElementById('adminStatus'); el.textContent = message || ''; el.style.color = error ? '#ff9b9b' : '';
-    }
-    function adminCell(row, value) { const td = document.createElement('td'); td.append(value instanceof Node ? value : adminText('span', value)); row.appendChild(td); return td; }
-    async function loadAdminDashboard() {
-      const token = ++adminLoadToken;
-      if (!acsuUser || !acsuIsAdmin) { adminStatus('This area is restricted to authorised unit administrators.', true); return; }
-      adminStatus('Loading dashboard…');
-      const [apps, msgs] = await Promise.all([
-        acsuSupabase.from('membership_applications').select('*').order('submitted_at', { ascending: false }).limit(100),
-        acsuSupabase.from('contact_messages').select('*').order('created_at', { ascending: false }).limit(100)
-      ]);
-      if (token !== adminLoadToken) return;
-      if (apps.error || msgs.error) { adminStatus((apps.error || msgs.error).message || 'Could not load dashboard data.', true); return; }
-      const applications = apps.data || [], messages = msgs.data || [];
-      document.getElementById('statApps').textContent = applications.length;
-      document.getElementById('statPending').textContent = applications.filter(x => x.status === 'pending').length;
-      document.getElementById('statMessages').textContent = messages.length;
-      const ab = document.getElementById('applicationsBody'); ab.replaceChildren();
-      if (!applications.length) { const tr=document.createElement('tr'), td=adminText('td','No membership applications yet.'); td.colSpan=6; tr.appendChild(td); ab.appendChild(tr); }
-      applications.forEach(app => {
-        const tr = document.createElement('tr');
-        adminCell(tr, app.student_full_name); adminCell(tr, app.grade_class); adminCell(tr, app.area_of_interest);
-        adminCell(tr, new Date(app.submitted_at).toLocaleString());
-        const status = adminText('span', app.status || 'pending', 'admin-status'); adminCell(tr, status);
-        const td = document.createElement('td');
-        const details = document.createElement('details'), summary = adminText('summary', 'View full application');
-        const detail = adminText('div', [
-          'Reference: '+app.reference, 'DOB: '+app.date_of_birth, 'Admission no.: '+app.admission_number,
-          'Student phone: '+app.student_phone, 'Student email: '+app.student_email,
-          'Guardian: '+app.guardian_name, 'Guardian phone: '+app.guardian_phone,
-          'Reason: '+(app.reason_for_joining || 'Not provided')
-        ].join('\n'), 'admin-detail');
-        details.append(summary, detail); td.appendChild(details);
-        const actions = document.createElement('div'); actions.className = 'admin-actions';
-        ['approved','rejected','pending'].forEach(next => {
-          const b = adminText('button', next[0].toUpperCase()+next.slice(1)); b.type='button'; b.addEventListener('click',()=>updateApplicationStatus(app.id,next)); actions.appendChild(b);
-        });
-        td.appendChild(actions); tr.appendChild(td); ab.appendChild(tr);
-      });
-      const mb = document.getElementById('messagesBody'); mb.replaceChildren();
-      if (!messages.length) { const tr=document.createElement('tr'); const td=adminText('td','No contact messages yet.'); td.colSpan=6; tr.appendChild(td); mb.appendChild(tr); }
-      messages.forEach(msg => {
-        const tr=document.createElement('tr'); adminCell(tr,msg.full_name+'\n'+msg.email); adminCell(tr,msg.topic);
-        const mtd=document.createElement('td'); mtd.appendChild(adminText('div',msg.message,'admin-detail')); tr.appendChild(mtd);
-        adminCell(tr,new Date(msg.created_at).toLocaleString()); adminCell(tr,msg.is_read?'Read':'Unread');
-        const td=document.createElement('td');
-        if (!msg.is_read) { const b=adminText('button','Mark read'); b.type='button'; b.addEventListener('click',()=>markMessageRead(msg.id)); td.appendChild(b); }
-        tr.appendChild(td); mb.appendChild(tr);
-      });
-      adminStatus('Dashboard updated. Showing the latest 100 applications and messages.');
-    }
-    async function updateApplicationStatus(id, status) {
-      const { error } = await acsuSupabase.from('membership_applications').update({ status, reviewed_by: acsuUser.id, reviewed_at: new Date().toISOString() }).eq('id',id);
-      if (error) { adminStatus(error.message,true); return; } await loadAdminDashboard();
-    }
-    async function markMessageRead(id) {
-      const { error } = await acsuSupabase.from('contact_messages').update({ is_read: true }).eq('id',id);
-      if (error) { adminStatus(error.message,true); return; } await loadAdminDashboard();
-    }
-    document.getElementById('adminRefresh').addEventListener('click',loadAdminDashboard);
-    document.getElementById('messagesRefresh').addEventListener('click',loadAdminDashboard);
-    document.querySelectorAll('[data-admin-tab]').forEach(button => button.addEventListener('click', () => {
-      const messages = button.dataset.adminTab === 'messages';
-      document.getElementById('adminApplications').hidden = messages;
-      document.getElementById('adminMessages').hidden = !messages;
-      document.querySelectorAll('[data-admin-tab]').forEach(b => { const active = b === button; b.classList.toggle('on',active); b.setAttribute('aria-selected',String(active)); });
-    }));
-
     Object.assign(SI, { "Established April 1972": "ස්ථාපිත කළේ 1972 අප්‍රේල්", "Memories through the years": "වසර ගණනාවක මතක", "Preview my photos": "මගේ ඡායාරූප බලන්න", "Memories": "මතක", "View our memories": "අපගේ මතක බලන්න", "History": "ඉතිහාසය", "Our history": "අපගේ ඉතිහාසය", "The gift of health": "සෞඛ්‍ය දානය", "Today": "අද", "Log in": "පිවිසෙන්න", "Create account": "ගිණුමක් සාදන්න", "Membership": "සාමාජිකත්වය", "Become a member": "සාමාජිකයෙකු වන්න",
       "Member login": "සාමාජික පිවිසුම", "Password": "මුරපදය", "← Back to home": "← මුල් පිටුවට", "Log out": "ඉවත් වන්න" });
     if (curLang === 'si') setLang('si');
@@ -1796,82 +1594,35 @@
     document.querySelectorAll('.auth-logos .disc').forEach((d, i) => d.replaceWith(document.querySelectorAll('header .disc.sm')[i].cloneNode(true)));
     route(); refreshAcct();
 
-    // ============ Membership form -> Supabase + PDF ==========
-    Object.assign(SI, {
-      "Membership form": "සාමාජික අයදුම්පත", "Student details": "ශිෂ්‍ය විස්තර", "Parent / guardian": "දෙමාපිය / භාරකරු",
-      "About you": "ඔබ ගැන", "Full name": "සම්පූර්ණ නම", "Date of birth": "උපන් දිනය", "Admission number": "ඇතුළත් වීමේ අංකය",
-      "Grade / Class": "ශ්‍රේණිය / පන්තිය", "Phone": "දුරකථන",
-      "Parent / guardian name": "දෙමාපිය / භාරකරුගේ නම", "Parent / guardian phone": "දෙමාපිය / භාරකරුගේ දුරකථන",
-      "Area of interest": "කැමති අංශය", "Submit membership form": "අයදුම්පත ඉදිරිපත් කරන්න"
-    });
-    if (curLang === 'si') setLang('si');
+    // ============ Membership form -> Supabase + downloadable PDF ============
     (function () {
       const f = document.getElementById('memform'), st = document.getElementById('mstatus'), btn = document.getElementById('mbtn');
       if (!f) return;
-      const L1 = s => String(s).replace(/[^\x20-\x7E]/g, '?').replace(/\\/g, '\\').replace(/\(/g, '\(').replace(/\)/g, '\)');
+      const L1 = s => String(s).replace(/[^\x20-\x7E]/g, '?').replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
       function makePDF(rows, ref, when) {
-        const W = 595, H = 842, M = 48; let y = H - 150, c = '';
-        const txt = (x, yy, size, str, font, rgb) => { c += `BT ${rgb || '0 0 0'} rg /${font || 'F1'} ${size} Tf ${x} ${yy} Td (${L1(str)}) Tj ET\n`; };
-        c += '0.478 0.071 0.078 rg 0 ' + (H - 90) + ' ' + W + ' 90 re f\n0.976 0.690 0 rg 0 ' + (H - 96) + ' ' + W + ' 6 re f\n';
-        txt(M, H - 48, 20, 'Ananda College Saukyadana Unit', 'F2', '1 1 1');
-        txt(M, H - 70, 11, 'Membership application  |  Live for Lives', 'F1', '0.98 0.85 0.5');
-        txt(M, H - 124, 10, 'Reference: ' + ref + '    Submitted: ' + when, 'F1', '0.35 0.35 0.35');
-        rows.forEach(([k, v]) => {
-          if (k === '#') { y -= 10; txt(M, y, 11, v.toUpperCase(), 'F2', '0.478 0.071 0.078'); c += `0.976 0.690 0 RG 1 w ${M} ${y - 5} m ${W - M} ${y - 5} l S\n`; y -= 24; return; }
-          txt(M, y, 9, k.toUpperCase(), 'F2', '0.45 0.45 0.45');
-          const words = (v || '-').split(/\s+/), lines = []; let cur = '';
-          words.forEach(w => { if ((cur + ' ' + w).length > 78) { lines.push(cur); cur = w; } else cur = (cur ? cur + ' ' + w : w); }); lines.push(cur);
-          lines.slice(0, 6).forEach((ln, i) => txt(M, y - 14 - i * 14, 11.5, ln));
-          y -= 14 + Math.min(lines.length, 6) * 14 + 8;
-        });
-        txt(M, 40, 8.5, 'Generated from the Ananda College Saukyadana Unit website. Please keep this copy for your records.', 'F1', '0.5 0.5 0.5');
-        const objs = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
-          `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>`,
-          `<< /Length ${c.length} >>\nstream\n${c}endstream`,
-          '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
-          '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>'];
-        let out = '%PDF-1.4\n', off = [];
-        objs.forEach((o, i) => { off.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
-        const x = out.length; out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + off.map(o => String(o).padStart(10, '0') + ' 00000 n \n').join('') +
-          `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${x}\n%%EOF`;
-        const bytes = new Uint8Array(out.length); for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 255;
-        return new Blob([bytes], { type: 'application/pdf' });
+        const W=595,H=842,M=48; let y=H-150,c='';
+        const txt=(x,yy,size,str,font,rgb)=>{c+=`BT ${rgb||'0 0 0'} rg /${font||'F1'} ${size} Tf ${x} ${yy} Td (${L1(str)}) Tj ET\n`;};
+        c+='0.478 0.071 0.078 rg 0 '+(H-90)+' '+W+' 90 re f\n0.976 0.690 0 rg 0 '+(H-96)+' '+W+' 6 re f\n';
+        txt(M,H-48,20,'Ananda College Saukyadana Unit','F2','1 1 1'); txt(M,H-70,11,'Membership application | Live for Lives','F1','0.98 0.85 0.5'); txt(M,H-124,10,'Reference: '+ref+' Submitted: '+when,'F1','0.35 0.35 0.35');
+        rows.forEach(([k,v])=>{if(k==='#'){y-=10;txt(M,y,11,v.toUpperCase(),'F2','0.478 0.071 0.078');c+=`0.976 0.690 0 RG 1 w ${M} ${y-5} m ${W-M} ${y-5} l S\n`;y-=24;return;}txt(M,y,9,k.toUpperCase(),'F2','0.45 0.45 0.45');const words=(v||'-').split(/\s+/),lines=[];let cur='';words.forEach(w=>{if((cur+' '+w).length>78){lines.push(cur);cur=w;}else cur=(cur?cur+' ':'')+w;});lines.push(cur);lines.slice(0,6).forEach((ln,i)=>txt(M,y-14-i*14,11.5,ln));y-=14+Math.min(lines.length,6)*14+8;});
+        txt(M,40,8.5,'Generated from the Ananda College Saukyadana Unit website.','F1','0.5 0.5 0.5');
+        const objs=['<< /Type /Catalog /Pages 2 0 R >>','<< /Type /Pages /Kids [3 0 R] /Count 1 >>',`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>`,`<< /Length ${c.length} >>\nstream\n${c}endstream`,'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>'];let out='%PDF-1.4\n',off=[];objs.forEach((o,i)=>{off.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`;});const x=out.length;out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+off.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${x}\n%%EOF`;const bytes=new Uint8Array(out.length);for(let i=0;i<out.length;i++)bytes[i]=out.charCodeAt(i)&255;return new Blob([bytes],{type:'application/pdf'});
       }
-      const v = id => (document.getElementById(id).value || '').trim();
-      f.addEventListener('submit', async e => {
-        e.preventDefault(); st.style.color = '';
-        if (!acsuUser) { st.textContent = 'Please create an account or log in before submitting a membership application.'; st.style.color = '#ff9b9b'; location.hash = '#login'; return; }
-        const req = [...f.querySelectorAll('[required]')];
-        const bad = req.find(el => el.type === 'checkbox' ? !el.checked : !el.value.trim());
-        if (bad) { st.textContent = t('Please fill in all required fields.'); st.style.color = '#ff9b9b'; bad.focus(); return; }
-        if (!/^\S+@\S+\.\S+$/.test(v('m_email'))) { st.textContent = t('Please enter a valid email address.'); st.style.color = '#ff9b9b'; return; }
-        if (!v('m_dob') || new Date(v('m_dob') + 'T00:00:00') >= new Date(new Date().toDateString())) { st.textContent = 'Please enter a valid date of birth in the past.'; st.style.color = '#ff9b9b'; return; }
-        const now = new Date(), ref = 'SAU-' + now.toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
-        const when = now.toLocaleString('en-GB');
-        const rows = [['#', 'Student details'], ['Full name', v('m_name')], ['Date of birth', v('m_dob')], ['Admission number', v('m_adm')], ['Grade / Class', v('m_grade')],
-          ['Phone', v('m_phone')], ['Email', v('m_email')], ['#', 'Parent / guardian'], ['Name', v('m_pname')], ['Phone', v('m_pphone')],
-          ['#', 'About'], ['Area of interest', v('m_area')], ['Reason for joining', v('m_why') || '-'],
-          ['#', 'Declaration'], ['Consent', 'Details confirmed; parent / guardian agrees to the student joining the unit.']];
-        btn.disabled = true; st.textContent = 'Saving your application…';
-        try {
-          const { data: { user } } = await acsuSupabase.auth.getUser();
-          const { error } = await acsuSupabase.from('membership_applications').insert({
-            user_id: user?.id || acsuUser.id, reference: ref, student_full_name: v('m_name'), date_of_birth: v('m_dob'),
-            admission_number: v('m_adm'), grade_class: v('m_grade'), student_phone: v('m_phone'), student_email: v('m_email'),
-            guardian_name: v('m_pname'), guardian_phone: v('m_pphone'), area_of_interest: v('m_area'),
-            reason_for_joining: v('m_why'), consent: document.getElementById('m_ok').checked
-          });
-          if (error) throw error;
-          const pdf = makePDF(rows, ref, when), fname = 'Membership-' + ref + '.pdf';
-          const a = document.createElement('a'); a.href = URL.createObjectURL(pdf); a.download = fname; document.body.appendChild(a); a.click(); a.remove();
-          setTimeout(() => URL.revokeObjectURL(a.href), 30000);
-          st.textContent = 'Application submitted successfully. Your PDF copy has been downloaded. Reference: ' + ref;
-          st.style.color = '#7fe3a0'; f.reset(); refreshAcct();
-        } catch (err) {
-          console.error('ACSU membership submission failed:', err);
-          st.textContent = 'We could not save your application. Please try again. Your information has not been submitted.';
-          st.style.color = '#ff9b9b';
-        } finally { btn.disabled = false; }
+      const v=id=>(document.getElementById(id).value||'').trim();
+      f.addEventListener('submit',async e=>{
+        e.preventDefault(); st.style.color='';
+        const {data:{user}}=await acsuSupabase.auth.getUser();
+        if(!user){st.textContent=t('Please log in before submitting a membership application.');st.style.color='#ff9b9b';location.hash='login';return;}
+        if(!f.reportValidity())return;
+        if(!/^\S+@\S+\.\S+$/.test(v('m_email'))){st.textContent=t('Please enter a valid email address.');st.style.color='#ff9b9b';return;}
+        const now=new Date(),ref='ACSU-'+now.toISOString().slice(0,10).replace(/-/g,'')+'-'+crypto.randomUUID().slice(0,6).toUpperCase(),when=now.toLocaleString('en-GB');
+        const rows=[['#','Student details'],['Full name',v('m_name')],['Date of birth',v('m_dob')],['Admission number',v('m_adm')],['Grade / Class',v('m_grade')],['Phone',v('m_phone')],['Email',v('m_email')],['Home address',v('m_addr')],['#','Parent / guardian'],['Name',v('m_pname')],['Phone',v('m_pphone')],['#','About'],['Area of interest',v('m_area')],['Medical conditions / allergies',v('m_med')||'None'],['Reason for joining',v('m_why')||'-']];
+        btn.disabled=true;st.textContent=t('Submitting…');
+        const {error}=await acsuSupabase.from('membership_applications').insert({user_id:user.id,reference:ref,student_full_name:v('m_name'),date_of_birth:v('m_dob'),admission_number:v('m_adm'),grade_class:v('m_grade'),student_phone:v('m_phone'),student_email:v('m_email'),home_address:v('m_addr'),guardian_name:v('m_pname'),guardian_phone:v('m_pphone'),area_of_interest:v('m_area'),medical_notes:v('m_med'),reason_for_joining:v('m_why'),consent:document.getElementById('m_ok').checked});
+        btn.disabled=false;
+        if(error){st.textContent=t('Your application could not be submitted. Please try again.')+' '+error.message;st.style.color='#ff9b9b';return;}
+        const pdf=makePDF(rows,ref,when),a=document.createElement('a');a.href=URL.createObjectURL(pdf);a.download='Membership-'+ref+'.pdf';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+        st.textContent=t('Your application was submitted successfully. Your PDF copy has been downloaded. Reference: ')+ref;st.style.color='#7fe3a0';f.reset();await refreshAcct();
       });
     })();
 
