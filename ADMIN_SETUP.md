@@ -17,7 +17,7 @@ where lower(email) = lower('YOUR-ADMIN-EMAIL@example.com')
 on conflict (user_id) do update set role = excluded.role;
 ```
 
-5. Sign out and sign in again on the website, then open the **Admin** link.
+5. Sign out and sign in again on the website. The **ACSU Admin** panel appears inside the signed-in account area when the admin role is detected.
 
 If the query inserts zero rows, the account has not registered with that email yet. Do not share passwords or secret API keys.
 
